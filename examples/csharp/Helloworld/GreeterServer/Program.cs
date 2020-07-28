@@ -26,7 +26,13 @@ namespace GreeterServer
         {
             return Task.FromResult(new HelloReply { Message = "Hello " + request.Name });
         }
+
+      // Server side handler of the SayHello RPC
+      public override Task<HelloReply> SayHelloAgain(HelloRequest request, ServerCallContext context)
+      {
+        return Task.FromResult(new HelloReply { Message = "Hello again" + request.Name });
     }
+  }
 
     class Program
     {

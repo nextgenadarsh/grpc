@@ -30,6 +30,9 @@ namespace GreeterClient
             var reply = client.SayHello(new HelloRequest { Name = user });
             Console.WriteLine("Greeting: " + reply.Message);
 
+            var replyAgain = client.SayHelloAgain(new HelloRequest { Name = user });
+            Console.WriteLine("Greeting: " + replyAgain.Message);
+
             channel.ShutdownAsync().Wait();
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
